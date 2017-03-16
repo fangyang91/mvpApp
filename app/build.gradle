@@ -31,6 +31,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.1.0'
+    compile "com.android.support:design:${rootProject.ext.support}"
     testCompile 'junit:junit:4.12'
     // butterknife
     apt 'com.jakewharton:butterknife-compiler:8.2.1'
@@ -42,5 +43,9 @@ dependencies {
     compile 'com.trello:rxlifecycle:1.0'
     compile 'com.trello:rxlifecycle-components:1.0'
     compile 'com.tbruyelle.rxpermissions:rxpermissions:0.9.1@aar'
+    //splash_time
     compile 'com.github.Rukey7:TagLayout:1.0.3'
+
+    // circleimageview
+    compile 'de.hdodenhof:circleimageview:2.1.0'
 }

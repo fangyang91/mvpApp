@@ -75,9 +75,9 @@ public class SplashActivity extends BaseActivity {
         }
     }
 
-    /*@Override
+    @Override
     public void onBackPressed() {
         //不响应后退键
         return;
-    }*/
+    }
 }
