@@ -2,10 +2,14 @@ package com.yangfang.mvp.module.base;
 
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 
 import com.trello.rxlifecycle.LifecycleTransformer;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 import com.yangfang.mvp.R;
+import com.yangfang.mvp.module.news.main.NewsMainFragment;
+import com.yangfang.mvp.module.news.main.PhotoMainFragment;
 import com.yangfang.mvp.widget.EmptyLayout;
 
 import javax.annotation.Nullable;
@@ -71,6 +75,7 @@ public abstract class BaseActivity extends RxAppCompatActivity implements IBaseV
         initSwipeRefresh();
         updateViews(false);
     }
+
     @Override
     public void showLoading() {
         if (mEmptyLayout != null) {
@@ -84,6 +89,7 @@ public abstract class BaseActivity extends RxAppCompatActivity implements IBaseV
             mEmptyLayout.hide();
         }
     }
+
     @Override
     public void showNetError(final EmptyLayout.OnRetryListener onRetryListener) {
         if (mEmptyLayout != null) {
@@ -91,6 +97,7 @@ public abstract class BaseActivity extends RxAppCompatActivity implements IBaseV
             mEmptyLayout.setRetryListener(onRetryListener);
         }
     }
+
     @Override
     public <T> LifecycleTransformer<T> bindToLife() {
         return this.<T>bindToLifecycle();
@@ -112,6 +119,25 @@ public abstract class BaseActivity extends RxAppCompatActivity implements IBaseV
                     updateViews(true);
                 }
             });*/
+    }
+
+    /**
+     * 替换Fragment
+     */
+    protected void replaceFragment(int containerViewId, NewsMainFragment fragment, String tag) {
+        if (getSupportFragmentManager().findFragmentByTag(tag) == null) {
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            //设置tag
+            fragmentTransaction.replace(containerViewId, fragment, tag);
+            fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+            //这里设置tag,上面也要设置tag
+            fragmentTransaction.addToBackStack(tag);
+            fragmentTransaction.commit();
+        } else {
+            //存在则弹出上面的所有的fragment,并显示对应的fragment
+            getSupportFragmentManager().popBackStack(tag, 0);
         }
+
+    }
 }
 
