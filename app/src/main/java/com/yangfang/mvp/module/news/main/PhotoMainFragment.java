@@ -1,6 +1,7 @@
 package com.yangfang.mvp.module.news.main;
 
 import com.yangfang.mvp.module.base.BaseActivity;
+import com.yangfang.mvp.module.base.IBasePresenter;
 
 /**
  * Description:
@@ -8,7 +9,7 @@ import com.yangfang.mvp.module.base.BaseActivity;
  * Author     : yangfang
  * Date       : 2017/3/20 20:39
  */
-public class PhotoMainFragment extends BaseActivity {
+public class PhotoMainFragment extends BaseActivity<IBasePresenter> {
     @Override
     protected int attachLayoutRes() {
         return 0;

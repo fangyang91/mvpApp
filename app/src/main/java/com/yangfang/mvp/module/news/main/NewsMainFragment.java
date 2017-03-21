@@ -1,6 +1,11 @@
 package com.yangfang.mvp.module.news.main;
 
+import com.yangfang.mvp.R;
+import com.yangfang.mvp.local.table.NewsTypeInfo;
 import com.yangfang.mvp.module.base.BaseActivity;
+import com.yangfang.mvp.module.base.IRxBusPresenter;
+
+import java.util.List;
 
 /**
  * Description:
@@ -8,10 +13,10 @@ import com.yangfang.mvp.module.base.BaseActivity;
  * Author     : yangfang
  * Date       : 2017/3/20 20:38
  */
-public class NewsMainFragment extends BaseActivity{
+public class NewsMainFragment extends BaseActivity<IRxBusPresenter> implements INewsMainView{
     @Override
     protected int attachLayoutRes() {
-        return 0;
+        return R.layout.fragment_news_main;
     }
 
     @Override
@@ -26,6 +31,11 @@ public class NewsMainFragment extends BaseActivity{
 
     @Override
     protected void updateViews(boolean isRefresh) {
+
+    }
+
+    @Override
+    public void loadData(List<NewsTypeInfo> checkList) {
 
     }
 }

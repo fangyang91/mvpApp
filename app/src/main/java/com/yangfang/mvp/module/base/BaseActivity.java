@@ -24,7 +24,7 @@ import butterknife.ButterKnife;
  * Date       : 2017/3/12 10:54
  */
 
-public abstract class BaseActivity extends RxAppCompatActivity implements IBaseView {
+public abstract class BaseActivity<I extends IBasePresenter> extends RxAppCompatActivity implements IBaseView {
 
     /**
      * 把EmptyLayout放在基类统一处理，@Nullable表明View可以为null

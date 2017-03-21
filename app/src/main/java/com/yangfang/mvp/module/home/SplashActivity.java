@@ -11,6 +11,7 @@ import android.content.Intent;
 import com.dl7.tag.TagView;
 import com.yangfang.mvp.R;
 import com.yangfang.mvp.module.base.BaseActivity;
+import com.yangfang.mvp.module.base.IBasePresenter;
 import com.yangfang.mvp.utils.RxHelper;
 
 import butterknife.BindView;
@@ -19,7 +20,7 @@ import rx.Subscriber;
 /**
  * 开机界面
  */
-public class SplashActivity extends BaseActivity {
+public class SplashActivity extends BaseActivity<IBasePresenter> {
 
     @BindView(R.id.tag_skip)
     TagView mTagSkip;

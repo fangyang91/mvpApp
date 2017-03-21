@@ -12,6 +12,7 @@ import android.widget.FrameLayout;
 
 import com.yangfang.mvp.R;
 import com.yangfang.mvp.module.base.BaseActivity;
+import com.yangfang.mvp.module.base.IBasePresenter;
 import com.yangfang.mvp.module.news.main.NewsMainFragment;
 
 import butterknife.BindView;
@@ -23,7 +24,7 @@ import butterknife.ButterKnife;
  * Author     : yangfang
  * Date       : 2017/3/14 12:56
  */
-public class HomeActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class HomeActivity extends BaseActivity<IBasePresenter> implements NavigationView.OnNavigationItemSelectedListener{
 
     @BindView(R.id.fl_container)
     FrameLayout    mFlContainer;
