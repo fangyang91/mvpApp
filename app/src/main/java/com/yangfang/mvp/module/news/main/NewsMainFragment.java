@@ -1,9 +1,10 @@
 package com.yangfang.mvp.module.news.main;
 
-import com.yangfang.mvp.R;
+import com.trello.rxlifecycle.LifecycleTransformer;
 import com.yangfang.mvp.local.table.NewsTypeInfo;
-import com.yangfang.mvp.module.base.BaseActivity;
+import com.yangfang.mvp.module.base.BaseFragment;
 import com.yangfang.mvp.module.base.IRxBusPresenter;
+import com.yangfang.mvp.widget.EmptyLayout;
 
 import java.util.List;
 
@@ -13,10 +14,22 @@ import java.util.List;
  * Author     : yangfang
  * Date       : 2017/3/20 20:38
  */
-public class NewsMainFragment extends BaseActivity<IRxBusPresenter> implements INewsMainView{
+public class NewsMainFragment extends BaseFragment<IRxBusPresenter> implements INewsMainView {
+
+
     @Override
-    protected int attachLayoutRes() {
-        return R.layout.fragment_news_main;
+    protected void updateViews(boolean isRefresh) {
+
+    }
+
+    @Override
+    protected void initSwipeRefresh() {
+
+    }
+
+    @Override
+    protected void initViews() {
+
     }
 
     @Override
@@ -25,12 +38,32 @@ public class NewsMainFragment extends BaseActivity<IRxBusPresenter> implements I
     }
 
     @Override
-    protected void initView() {
+    protected int attachLayoutRes() {
+        return 0;
+    }
+
+    @Override
+    public void showLoading() {
 
     }
 
     @Override
-    protected void updateViews(boolean isRefresh) {
+    public void hideLoading() {
+
+    }
+
+    @Override
+    public void showNetError(EmptyLayout.OnRetryListener onRetryListener) {
+
+    }
+
+    @Override
+    public <T> LifecycleTransformer<T> bindToLife() {
+        return null;
+    }
+
+    @Override
+    public void finishRefresh() {
 
     }
 

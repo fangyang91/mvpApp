@@ -12,11 +12,14 @@ import android.widget.FrameLayout;
 
 import com.yangfang.mvp.R;
 import com.yangfang.mvp.module.base.BaseActivity;
-import com.yangfang.mvp.module.base.IBasePresenter;
 import com.yangfang.mvp.module.news.main.NewsMainFragment;
+import com.yangfang.mvp.module.news.main.PhotoMainFragment;
+import com.yangfang.mvp.module.news.main.VideoMainFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+;
 
 /**
  * Description:
@@ -24,7 +27,7 @@ import butterknife.ButterKnife;
  * Author     : yangfang
  * Date       : 2017/3/14 12:56
  */
-public class HomeActivity extends BaseActivity<IBasePresenter> implements NavigationView.OnNavigationItemSelectedListener{
+public class HomeActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     @BindView(R.id.fl_container)
     FrameLayout    mFlContainer;
@@ -44,10 +47,10 @@ public class HomeActivity extends BaseActivity<IBasePresenter> implements Naviga
                     replaceFragment(R.id.fl_container, new NewsMainFragment(), mSparseTags.get(R.id.nav_news));
                     break;
                 case R.id.nav_photos:
-                    //replaceFragment(R.id.fl_container, new PhotoMainFragment(), mSparseTags.get(R.id.nav_photos));
+                    replaceFragment(R.id.fl_container, new PhotoMainFragment(), mSparseTags.get(R.id.nav_photos));
                     break;
                 case R.id.nav_videos:
-                    //replaceFragment(R.id.fl_container, new VideoMainFragment(), mSparseTags.get(R.id.nav_videos));
+                    replaceFragment(R.id.fl_container, new VideoMainFragment(), mSparseTags.get(R.id.nav_videos));
                     break;
                 case R.id.nav_setting:
                     //SettingsActivity.launch(HomeActivity.this);

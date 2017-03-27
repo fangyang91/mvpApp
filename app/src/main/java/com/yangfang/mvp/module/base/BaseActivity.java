@@ -2,14 +2,11 @@ package com.yangfang.mvp.module.base;
 
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-
+import android.support.v4.app.Fragment;
 import com.trello.rxlifecycle.LifecycleTransformer;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 import com.yangfang.mvp.R;
-import com.yangfang.mvp.module.news.main.NewsMainFragment;
-import com.yangfang.mvp.module.news.main.PhotoMainFragment;
 import com.yangfang.mvp.widget.EmptyLayout;
 
 import javax.annotation.Nullable;
@@ -124,7 +121,7 @@ public abstract class BaseActivity<I extends IBasePresenter> extends RxAppCompat
     /**
      * 替换Fragment
      */
-    protected void replaceFragment(int containerViewId, NewsMainFragment fragment, String tag) {
+    protected void replaceFragment(int containerViewId, Fragment fragment, String tag) {
         if (getSupportFragmentManager().findFragmentByTag(tag) == null) {
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             //设置tag

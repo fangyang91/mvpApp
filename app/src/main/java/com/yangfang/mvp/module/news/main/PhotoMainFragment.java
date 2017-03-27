@@ -1,7 +1,10 @@
 package com.yangfang.mvp.module.news.main;
 
-import com.yangfang.mvp.module.base.BaseActivity;
+import com.trello.rxlifecycle.LifecycleTransformer;
+import com.yangfang.mvp.module.base.BaseFragment;
 import com.yangfang.mvp.module.base.IBasePresenter;
+import com.yangfang.mvp.photo.main.IPhotoMainView;
+import com.yangfang.mvp.widget.EmptyLayout;
 
 /**
  * Description:
@@ -9,10 +12,21 @@ import com.yangfang.mvp.module.base.IBasePresenter;
  * Author     : yangfang
  * Date       : 2017/3/20 20:39
  */
-public class PhotoMainFragment extends BaseActivity<IBasePresenter> {
+public class PhotoMainFragment extends BaseFragment<IBasePresenter> implements IPhotoMainView {
+
     @Override
-    protected int attachLayoutRes() {
-        return 0;
+    protected void updateViews(boolean isRefresh) {
+
+    }
+
+    @Override
+    protected void initSwipeRefresh() {
+
+    }
+
+    @Override
+    protected void initViews() {
+
     }
 
     @Override
@@ -21,12 +35,37 @@ public class PhotoMainFragment extends BaseActivity<IBasePresenter> {
     }
 
     @Override
-    protected void initView() {
+    protected int attachLayoutRes() {
+        return 0;
+    }
+
+    @Override
+    public void showLoading() {
 
     }
 
     @Override
-    protected void updateViews(boolean isRefresh) {
+    public void hideLoading() {
+
+    }
+
+    @Override
+    public void showNetError(EmptyLayout.OnRetryListener onRetryListener) {
+
+    }
+
+    @Override
+    public <T> LifecycleTransformer<T> bindToLife() {
+        return null;
+    }
+
+    @Override
+    public void finishRefresh() {
+
+    }
+
+    @Override
+    public void updateCount(int lovedCount) {
 
     }
 }
